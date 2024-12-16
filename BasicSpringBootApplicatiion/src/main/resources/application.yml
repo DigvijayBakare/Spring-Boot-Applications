@@ -1,0 +1,15 @@
+logging:
+  file:
+    name: ${logging.file.path}/${spring.application.name}.log
+    path: logs
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${logging.file.path}/${spring.application.name}-%d{yyyy-MM-dd}-%i.log
+      max-file-size: 10MB
+spring:
+  application:
+    name: Petistaan
+
+  # application.properties
+  profiles:
+    active: test
