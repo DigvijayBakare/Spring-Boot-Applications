@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fragment</title>
+</head>
+<body>
+    <h1>This is the fragment page for testing</h1>
+    <!-- Including footer tag here -->
+
+    <footer id="hostTag" th:replace="~{footer::f1(${title}, ${subtitle})}">
+<!--        th:replace="~{footer::f1('First Title', ' First Subtitle')}"-->
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body {
+    background: #e2e2e2;
+}
+.container {
+    background: #ffffff;
+    padding: 30px;
+}
+.profile {
+    border-radius: 50%;
+}

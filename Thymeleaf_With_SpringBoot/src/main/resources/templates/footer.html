@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Footer Template</title>
+</head>
+<body>
+    <footer id="FragmentTag" th:fragment="f1(title, subtitle)">
+      <div class="container" >
+        <h2 th:text="${title}"></h2>
+        <h2 th:text="${subtitle}"></h2>
+        <h2>This is the footer</h2>
+        <h2>Fragmenting the footer</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea eligendi magni numquam. Ab at blanditiis commodi
+          dignissimos dolore dolorum eos error et eum eveniet illum ipsa itaque iure molestiae natus nulla odio omnis
+          quaerat quas saepe sunt, tempora totam vero! Aspernatur consectetur distinctio error maiores nobis nulla
+          quisquam rem suscipit!</p>
+      </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Page</title>
+</head>
+<body>
+    <h1>About page</h1>
+    <h1>This is my first html page with emmet and thymeleaf</h1>
+    <h1 th:text="${name}"></h1><h1 th:text="${#strings.toUpperCase(name)}"></h1><h1 th:text="${#strings.toLowerCase(name)}"></h1>
+    <h2>Name of the owner is <span th:text="${name}"></span></h2>
+    <div th:with="a=5, b=10, n=${name}">
+        <h1>Value of a, b and n is <span th:text="${a}"/>&emsp13;<span th:text="${b}"/>&emsp13;<span th:text="${name}"/></h1>
+        <h2 th:text="'sum of ' + ${a} +' and '+${b}+ ' is '+ ${a+b}"></h2>
+    </div>
+</body>
+</html>

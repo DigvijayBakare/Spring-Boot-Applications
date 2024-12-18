@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conditional Page</title>
+</head>
+<body>
+    <h1>This is the conditional checking page using elvis operator</h1>
+    <h1>User is <span th:style="${isActive} ? 'color:green': 'color:red'"
+            th:text="${isActive} ? 'ACTIVE': 'NOT ACTIVE'"></span></h1>
+    <h2 th:if="${gender}=='M'">Male</h2>
+    <h2 th:unless="${gender}=='M'">Female</h2>
+    <h2>Switch conditional statement</h2>
+    <div th:switch="${#lists.size(list)}">
+        <h2 th:case="'0'">List contains 0 elements</h2>
+        <h2 th:case="'1'">List contains 1 elements</h2>
+        <h2 th:case="*">List contains more than one element</h2>
+    </div>
+</body>
+</html>
