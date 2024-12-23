@@ -1,109 +1,92 @@
 package com.api.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
-@Table(name = "old_product_info ")
 public class OldProduct {
     @Id
-    private int oProductId;
-    private String oProductName;
-    private String oProductDesc;
-    private int oProductPrice;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String oldValue;
+    private String newValue;
+    private String fieldName;
 
     private int productId;
-    private String productName;
-    private String productDesc;
-    private int productPrice;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt;
 
     public OldProduct() {
     }
 
-    public OldProduct(int oProductId, String oProductName, String oProductDesc, int oProductPrice, int productId) {
-        this.oProductId = oProductId;
-        this.oProductName = oProductName;
-        this.oProductDesc = oProductDesc;
-        this.oProductPrice = oProductPrice;
+    public OldProduct(int id, String oldValue, String newValue, String fieldName, int productId) {
+        this.id = id;
+        this.oldValue = oldValue;
+        this.newValue = newValue;
+        this.fieldName = fieldName;
         this.productId = productId;
     }
 
-    public int getoProductId() {
-        return oProductId;
+    public int getId() {
+        return id;
     }
 
-    public void setoProductId(int oProductId) {
-        this.oProductId = oProductId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getoProductName() {
-        return oProductName;
+    public String getOldValue() {
+        return oldValue;
     }
 
-    public void setoProductName(String oProductName) {
-        this.oProductName = oProductName;
+    public void setOldValue(String oldValue) {
+        this.oldValue = oldValue;
     }
 
-    public String getoProductDesc() {
-        return oProductDesc;
+    public String getNewValue() {
+        return newValue;
     }
 
-    public void setoProductDesc(String oProductDesc) {
-        this.oProductDesc = oProductDesc;
+    public void setNewValue(String newValue) {
+        this.newValue = newValue;
     }
 
-    public int getoProductPrice() {
-        return oProductPrice;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setoProductPrice(int oProductPrice) {
-        this.oProductPrice = oProductPrice;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     public int getProductId() {
         return productId;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductDesc() {
-        return productDesc;
-    }
-
-    public void setProductDesc(String productDesc) {
-        this.productDesc = productDesc;
-    }
-
-    public int getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
-    }
-
     public void setProductId(int productId) {
         this.productId = productId;
     }
 
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Override
     public String toString() {
-        return "OldProduct{" +
-                "oProductId=" + oProductId +
-                ", oProductName='" + oProductName + '\'' +
-                ", oProductDesc='" + oProductDesc + '\'' +
-                ", oProductPrice=" + oProductPrice +
+        return "OldProduct {" +
+                "id=" + id +
+                ", oldValue='" + oldValue + '\'' +
+                ", newValue='" + newValue + '\'' +
+                ", fieldName='" + fieldName + '\'' +
                 ", productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productDesc='" + productDesc + '\'' +
-                ", productPrice=" + productPrice +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

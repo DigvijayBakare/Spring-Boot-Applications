@@ -1,6 +1,5 @@
 package com.api.controllers;
 
-import com.api.entities.OldProduct;
 import com.api.entities.Product;
 import com.api.helper.ExcelHelper;
 import com.api.impl.ProductServiceImpl;
@@ -43,11 +42,7 @@ public class ProductController {
 
     @PutMapping("/update/{pId}")
     public ResponseEntity<?> updateProduct(@PathVariable("pId") int pId, @RequestBody Product p) {
-//        Product op = this.productRepo.findById(pId).get();
-//        OldProduct oldProduct = new OldProduct(op.getProductId(), op.getProductName(), op.getProductDesc(), op.getProductPrice());
-//        oldProductRepo.save(oldProduct);
         this.productService.updateProduct(pId,p);
-//        productRepo.save(p);
         return ResponseEntity.status(HttpStatus.OK).body("Product updated successfully!!");
     }
 }

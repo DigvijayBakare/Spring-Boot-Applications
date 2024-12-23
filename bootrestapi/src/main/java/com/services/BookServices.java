@@ -11,7 +11,7 @@ import com.entities.Book;
 @Component
 public class BookServices {
     @Autowired
-    private BookRepository bookRepository;      // updating from list to original database configuration
+    private BookRepository bookRepository;
     /*private static List<Book> bookList = new ArrayList<>();
     static {
         bookList.add(new Book(12, "Java Core", "Mohan"));

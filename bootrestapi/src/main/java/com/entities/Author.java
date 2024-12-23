@@ -2,7 +2,6 @@ package com.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +17,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JacksonXmlRootElement
 public class Author {
     @Id
    @GeneratedValue(strategy = GenerationType.SEQUENCE)
